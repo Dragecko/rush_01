@@ -31,10 +31,7 @@ int	*pool_clues(char *input)
 		++i;
 	}
 	if (idx != 16)
-	{
-		write (1, "Error\n", 6);
-		return (1);
-	}
+		err_manager();
 	return (clues);
 }
 
@@ -42,7 +39,7 @@ int	*pool_clues_divide(int *clues)
 {
 	int	clues_top[4];
 	int	clues_bottom[4];
-	int	clues_left[4};
+	int	clues_left[4];
 	int	clues_right[4];
 	int	i;
 
