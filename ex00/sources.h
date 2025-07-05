@@ -18,8 +18,6 @@
 
 void	ft_putstr(char *str);
 
-# define NOT31 "Usage : ./a.out <31 char : 16 int (1-4) with 15 spaces ' '>.\n"
-# define NOT1_4 "Int must be between 1 and 4.\n"
-# define NOT_SPACE "Spaces must be between each int as follow : '1 4...3 4'.\n"
+# define ERR "Error\n"
 
 #endif
