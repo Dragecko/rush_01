@@ -6,14 +6,15 @@
 /*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 16:49:26 by mlopizzo          #+#    #+#             */
-/*   Updated: 2025/07/05 16:59:35 by mlopizzo         ###   ########.fr       */
+/*   Updated: 2025/07/05 17:29:35 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sources.h"
 
-void	init_grid(int *grid[])
+int	**init_grid(void)
 {
+	int **grid;
 	int	i;
 	int	j;
 
@@ -28,4 +29,5 @@ void	init_grid(int *grid[])
 		}
 		++i;
 	}
+	return (grid);
 }
