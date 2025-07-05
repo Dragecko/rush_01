@@ -25,7 +25,7 @@ int	is_valid_input(char **argv)
 		{
 			if (input[i] < '1' || input[i] > '4')
 			{
-				ft_putstr(NOT1_4);
+				ft_putstr(ERR);
 				return (1);
 			}
 		}
@@ -33,7 +33,7 @@ int	is_valid_input(char **argv)
 		{
 			if (input[i] != ' ')
 			{
-				ft_putstr(NOT_SPACE);
+				ft_putstr(ERR);
 				return (1);
 			}
 		}
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_putstr(NOT31);
+		ft_putstr(ERR);
 		return (1);
 	}
 	len = 0;
@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 		len++;
 	if (len != 31)
 	{
-		ft_putstr(NOT31);
+		ft_putstr(ERR);
 		return (1);
 	}
 	is_valid_input(argv);
