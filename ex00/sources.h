@@ -26,6 +26,7 @@ int count_visible_from_left(int *row);
 int count_visible_from_right(int *row);
 int count_visible_from_top(int *col);
 int count_visible_from_bottom(int *col);
+int	*parsing(char *input);
 
 # define ERR "Error\n"
 

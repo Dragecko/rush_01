@@ -12,6 +12,25 @@
 
 #include "sources.h"
 
+int	check_clues(int col, int row)
+{
+	int	r;
+	int l;
+	int t;
+	int b;
+
+	r = count_visible_from_right(row);
+	l = count_visible_from_left(row);
+	t = count_visible_from_top(col);
+	b = count_visible_from_bottom(col);
+
+	if (r > clues[row + 8] || l > clues[row + 12])
+		return (1);
+	if (t > clues[col] || b > clues[col + 4])
+		return (1);
+	return (0);
+}
+
 int is_valid_placement(int grid[4][4], int row, int col, int val)
 {
 	int i;

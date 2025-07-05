@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 {
 	int	len;
 	int **grid;
+	int	*clues;
 
 	if (argc != 2)
 		return (err_manager());
@@ -50,8 +51,9 @@ int	main(int argc, char **argv)
 		return (err_manager());
 	if (is_invalid_input(argv))
 		return (err_manager());
-	
+	clues = parsing(argv[1]);
 	grid = init_grid();
+	
 	disp_grid(grid);
 	free(grid);
 	return (0);
