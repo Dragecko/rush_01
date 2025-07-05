@@ -50,6 +50,7 @@ int	main(int argc, char **argv)
 		return (err_manager());
 	if (is_invalid_input(argv))
 		return (err_manager());
+	
 	grid = init_grid();
 	disp_grid(grid);
 }

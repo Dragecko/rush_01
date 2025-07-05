@@ -35,7 +35,7 @@ int	*pool_clues(char *input)
 	return (clues);
 }
 
-int	*pool_clues_divide(int *clues)
+int	**pool_clues_divide(int *clues)
 {
 	int	clues_top[4];
 	int	clues_bottom[4];
@@ -53,4 +53,18 @@ int	*pool_clues_divide(int *clues)
 		i++;
 	}
 	return (clues_top, clues_bottom, clues_left, clues_right);
+}
+
+int **parsing(int *av)
+{
+	int *clues;
+	clues = pool_clues_divide(pool_clues(av));
+}
+
+int	main(int argc, char **argv)
+{
+	char **clues = parsing(argv);
+	if (argc != 2)
+		return;
+	printf("%d", clues[0][1]);
 }
