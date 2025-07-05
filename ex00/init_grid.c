@@ -14,11 +14,11 @@
 
 int	**init_grid(void)
 {
-	int **grid;
+	int	**grid;
 	int	i;
 	int	j;
 
-	grid = malloc(4 * sizeof(int*));
+	grid = malloc (4 * sizeof(int *));
 	if (!grid)
 		err_manager();
 	i = 0;

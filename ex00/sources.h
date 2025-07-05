@@ -19,14 +19,15 @@
 
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
-int	err_manager(void);
+int		err_manager(void);
 void	disp_grid(int **grid);
-int	**init_grid(void);
-int count_visible_from_left(int *row);
-int count_visible_from_right(int *row);
-int count_visible_from_top(int *col);
-int count_visible_from_bottom(int *col);
-int	*parsing(char *input);
+int		**init_grid(void);
+int		count_visible_from_left(int *row);
+int		count_visible_from_right(int *row);
+int		count_visible_from_top(int *col);
+int		count_visible_from_bottom(int *col);
+int		*parsing(char *input);
+int		ft_solver_from_pos(int pos, int **grid, int *clues);
 
 # define ERR "Error\n"
 

@@ -57,7 +57,6 @@ int	main(int argc, char **argv)
 }
 */
 
-
 /*
 int	**pool_clues_divide(int *clues)
 {

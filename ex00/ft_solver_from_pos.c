@@ -12,18 +12,17 @@
 
 #include "sources.h"
 
-int	check_clues(int col, int row)
+int	check_clues(int col, int row, int *clues)
 {
 	int	r;
-	int l;
-	int t;
-	int b;
+	int	l;
+	int	t;
+	int	b;
 
 	r = count_visible_from_right(row);
 	l = count_visible_from_left(row);
 	t = count_visible_from_top(col);
 	b = count_visible_from_bottom(col);
-
 	if (r > clues[row + 8] || l > clues[row + 12])
 		return (1);
 	if (t > clues[col] || b > clues[col + 4])
@@ -31,10 +30,10 @@ int	check_clues(int col, int row)
 	return (0);
 }
 
-int is_valid_placement(int grid[4][4], int row, int col, int val)
+int	is_valid_placement(int grid[4][4], int row, int col, int val)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (j < 4)
@@ -51,25 +50,25 @@ int is_valid_placement(int grid[4][4], int row, int col, int val)
 	return (1);
 }
 
-int ft_solver_from_pos(int pos, int **grid)
+int	ft_solver_from_pos(int pos, int **grid, int *clues)
 {
-	int row;
-	int col;
-	int val;
+	int	row;
+	int	col;
+	int	val;
 
 	if (pos == 16)
 		err_manager();
 	row = pos / 4;
 	col = pos % 4;
 	if (grid[row][col] != 0)
-		return ft_solver_from_pos(pos + 1, **grid);
+		return (ft_solver_from_pos(pos + 1, **grid, *clues));
 	val = 1;
 	while (val <= 4)
 	{
 		if (is_valid_placement(grid, row, col, val))
 		{
 			grid[row][col] = val;
-			if (ft_solver_from_pos(pos + 1, **grid))
+			if (ft_solver_from_pos(pos + 1, **grid, *clues))
 				err_manager();
 			grid[row][col] = 0;
 		}

@@ -12,8 +12,8 @@
 
 #include "sources.h"
 
-int err_manager(void)
+int	err_manager(void)
 {
-	ft_putstr(ERR);
+	ft_putstr (ERR);
 	return (1);
 }

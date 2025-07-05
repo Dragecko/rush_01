@@ -39,9 +39,11 @@ int	is_invalid_input(char **argv)
 int	main(int argc, char **argv)
 {
 	int	len;
-	int **grid;
+	int	**grid;
 	int	*clues;
+	int	pos;
 
+	pos = 0;
 	if (argc != 2)
 		return (err_manager());
 	len = 0;
@@ -53,7 +55,7 @@ int	main(int argc, char **argv)
 		return (err_manager());
 	clues = parsing(argv[1]);
 	grid = init_grid();
-	
+	ft_solver_from_pos(pos, grid, clues);
 	disp_grid(grid);
 	free(grid);
 	return (0);

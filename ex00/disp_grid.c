@@ -14,8 +14,9 @@
 
 void	disp_grid(int **grid)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	c;
 
 	i = 0;
 	j = 0;
@@ -24,7 +25,6 @@ void	disp_grid(int **grid)
 		j = 0;
 		while (j < 4)
 		{
-			char	c;
 			c = grid[i][j] + '0';
 			ft_putchar(c);
 			if (j < 3)
