@@ -12,7 +12,7 @@
 
 #include "sources.h"
 
-int	count_visible_from_left(int *row)
+int	count_visible_from_left(int row, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -23,17 +23,17 @@ int	count_visible_from_left(int *row)
 	i = 0;
 	while (i < 4)
 	{
-		if (row[i] > max_h)
+		if (grid[row][i] > max_h)
 		{
 			visible++;
-			max_h = row[i];
+			max_h = grid[row][i];
 		}
 		i++;
 	}
 	return (visible);
 }
 
-int	count_visible_from_right(int *row)
+int	count_visible_from_right(int row, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -44,17 +44,17 @@ int	count_visible_from_right(int *row)
 	i = 3;
 	while (i >= 0)
 	{
-		if (row[i] > max_h)
+		if (grid[row][i] > max_h)
 		{
 			visible++;
-			max_h = row[i];
+			max_h = grid[row][i];
 		}
 		i--;
 	}
 	return (visible);
 }
 
-int	count_visible_from_top(int *col)
+int	count_visible_from_top(int col, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -65,17 +65,17 @@ int	count_visible_from_top(int *col)
 	i = 0;
 	while (i < 4)
 	{
-		if (col[i] > max_h)
+		if (grid[i][col] > max_h)
 		{
 			visible++;
-			max_h = col[i];
+			max_h = grid[i][col];
 		}
 		i++;
 	}
 	return (visible);
 }
 
-int	count_visible_from_bottom(int *col)
+int	count_visible_from_bottom(int col, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -86,10 +86,10 @@ int	count_visible_from_bottom(int *col)
 	i = 3;
 	while (i >= 0)
 	{
-		if (col[i] > max_h)
+		if (grid[i][col] > max_h)
 		{
 			visible++;
-			max_h = col[i];
+			max_h = grid[i][col];
 		}
 		i--;
 	}
