@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         ::::::::           */
-/*   main.c                                              :+:    :+:           */
-/*                                                      +:+                   */
-/*   By: elhirond <marvin@42.fr>                       +#+                    */
-/*                                                    +#+                     */
-/*   Created: 2025/07/05 15:26:41 by elhirond       #+#    #+#                */
-/*   Updated: 2025/07/05 16:01:31 by elhirond       ########   odam.nl        */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 15:26:41 by elhirond          #+#    #+#             */
+/*   Updated: 2025/07/05 17:20:39 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,12 @@ int	is_valid_input(char **argv)
 		if (i % 2 == 0)
 		{
 			if (input[i] < '1' || input[i] > '4')
-			{
-				ft_putstr(ERR);
-				return (1);
-			}
+				err_manager();
 		}
 		else
 		{
 			if (input[i] != ' ')
-			{
-				ft_putstr(ERR);
-				return (1);
-			}
+				err_manager();
 		}
 		i++;
 	}
@@ -47,17 +41,11 @@ int	main(int argc, char **argv)
 	int	len;
 
 	if (argc != 2)
-	{
-		ft_putstr(ERR);
-		return (1);
-	}
+		err_manager();
 	len = 0;
 	while (argv[1][len] != '\0')
 		len++;
 	if (len != 31)
-	{
-		ft_putstr(ERR);
-		return (1);
-	}
+		err_manager();
 	is_valid_input(argv);
 }
