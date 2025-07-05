@@ -30,9 +30,7 @@ int    ft_solver_from_pos(int pos, int **grid)
         {
             grid[row][col] = val;
             if (ft_solver_from_pos(pos + 1))
-            {
                 return (1);
-            }
             grid[row][col] = 0;
         }
         val++;
