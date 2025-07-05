@@ -9,32 +9,56 @@
 /*   Updated: 2025/07/05 17:26:59 by wde-oliv       ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
-//Extraire les 16 chiffres indicateur des indices clues fourni en entree et les organiser (haut,bas,gauche,droite).
 
 #include "sources.h"
 
-int	*pool_clues(char *input)
+int	*parsing(char *input)
 {
-	int	clues[16];
+	int	*clues;
 	int	idx;
 	int	i;
+
+	clues = malloc(sizeof(int) * 16);
+	if (!clues)
+		err_manager();
 	i = 0;
 	idx = 0;
-
-	while (i < 31)
+	while (input[i])
 	{
 		if (input[i] >= '1' && input[i] <= '4')
 		{
 			clues[idx] = input[i] - '0';
 			idx++;
 		}
-		++i;
+		i++;
 	}
 	if (idx != 16)
 		err_manager();
 	return (clues);
 }
+/*
+int	main(int argc, char **argv)
+{
+	int	i;
+	int *clues;
+	
+	i = 0;
+	if (argc != 2)
+		return(1);
+	clues = parsing(argv[1]);
+	while (clues[i] != '\0')
+	{
+		printf("%d", clues[i]);
+		i++;
+	}
+	printf("\n");
+	free(clues);
+	return (0);
+}
+*/
 
+
+/*
 int	**pool_clues_divide(int *clues)
 {
 	int	clues_top[4];
@@ -54,17 +78,4 @@ int	**pool_clues_divide(int *clues)
 	}
 	return (clues_top, clues_bottom, clues_left, clues_right);
 }
-
-int **parsing(int *av)
-{
-	int *clues;
-	clues = pool_clues_divide(pool_clues(av));
-}
-
-int	main(int argc, char **argv)
-{
-	char **clues = parsing(argv);
-	if (argc != 2)
-		return;
-	printf("%d", clues[0][1]);
-}
+*/

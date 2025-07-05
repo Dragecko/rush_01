@@ -53,4 +53,6 @@ int	main(int argc, char **argv)
 	
 	grid = init_grid();
 	disp_grid(grid);
+	free(grid);
+	return (0);
 }
