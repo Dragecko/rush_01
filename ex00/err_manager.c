@@ -6,13 +6,13 @@
 /*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 17:20:57 by mlopizzo          #+#    #+#             */
-/*   Updated: 2025/07/05 17:31:00 by mlopizzo         ###   ########.fr       */
+/*   Updated: 2025/07/05 18:48:06 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sources.h"
 
-void err_manager(void)
+int err_manager(void)
 {
 	ft_putstr(ERR);
 	return (1);

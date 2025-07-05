@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_grid.c                                        :+:      :+:    :+:   */
+/*   disp_grid.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 16:49:26 by mlopizzo          #+#    #+#             */
-/*   Updated: 2025/07/05 18:53:33 by mlopizzo         ###   ########.fr       */
+/*   Created: 2025/07/05 17:38:18 by mlopizzo          #+#    #+#             */
+/*   Updated: 2025/07/05 18:47:00 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sources.h"
 
-int	**init_grid(void)
+void	disp_grid(int **grid)
 {
-	int **grid;
 	int	i;
 	int	j;
 
-	grid = malloc(4 * sizeof(int*));
-	if (!grid)
-		err_manager();
 	i = 0;
+	j = 0;
 	while (i < 4)
 	{
 		j = 0;
 		while (j < 4)
 		{
-			grid[i] = malloc(4 * sizeof(int));
-			grid[i][j] = 0;
+			char	c;
+			c = grid[i][j] + '0';
+			ft_putchar(c);
+			if (j < 3)
+			{
+				ft_putchar(' ');
+			}
 			++j;
 		}
+		ft_putchar('\n');
 		++i;
 	}
-	return (grid);
 }
 
-int main()
-{
-	int **grid = init_grid();
-	disp_grid(grid);
-}
+// int main()
+// {
+// 	int grid[4][4] = {{1, 2, 3, 4},
+// 						{2, 3, 1, 4},
+// 						{2, 1, 4, 3},
+// 						{3, 2, 4, 1}};
+
+// 	disp_grid(grid);
+// }
