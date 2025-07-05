@@ -6,7 +6,7 @@
 /*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 16:49:26 by mlopizzo          #+#    #+#             */
-/*   Updated: 2025/07/05 18:53:33 by mlopizzo         ###   ########.fr       */
+/*   Updated: 2025/07/05 18:59:34 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	**init_grid(void)
 	}
 	return (grid);
 }
-
+/*
 int main()
 {
 	int **grid = init_grid();
 	disp_grid(grid);
-}
+}*/

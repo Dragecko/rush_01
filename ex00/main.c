@@ -6,7 +6,7 @@
 /*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:26:41 by elhirond          #+#    #+#             */
-/*   Updated: 2025/07/05 17:20:39 by mlopizzo         ###   ########.fr       */
+/*   Updated: 2025/07/05 19:32:50 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	is_valid_input(char **argv)
 int	main(int argc, char **argv)
 {
 	int	len;
+	int **grid;
 
 	if (argc != 2)
 		err_manager();
@@ -48,4 +49,6 @@ int	main(int argc, char **argv)
 	if (len != 31)
 		err_manager();
 	is_valid_input(argv);
+	**grid = init_grid();
+	disp_grid(grid);
 }

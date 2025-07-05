@@ -1,58 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         ::::::::           */
-/*   ft_solver_from_pos.c                                :+:    :+:           */
-/*                                                      +:+                   */
-/*   By: elhirond <marvin@42.fr>                       +#+                    */
-/*                                                    +#+                     */
-/*   Created: 2025/07/05 17:03:47 by elhirond       #+#    #+#                */
-/*   Updated: 2025/07/05 17:03:50 by elhirond       ########   odam.nl        */
+/*                                                        :::      ::::::::   */
+/*   ft_solver_from_pos.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 17:03:47 by elhirond          #+#    #+#             */
+/*   Updated: 2025/07/05 19:18:17 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sources.h"
 
-int is_valid_place(int grid[4][4], int row, int col, int val)
+int is_valid_placement(int grid[4][4], int row, int col, int val)
 {
-    int i;
-    int j;
+	int i;
+	int j;
 
-    j = 0;
-    while (j < 4)
-    {
-        if (grid[row][j] == val)
-            return (0);
-    }
-    i = 0;
-    while (i < 4)
-    {
-        if (grid[i][col] == val)
-            return (0);
-    }
+	j = 0;
+	while (j < 4)
+	{
+		if (grid[row][j] == val)
+			return (0);
+	}
+	i = 0;
+	while (i < 4)
+	{
+		if (grid[i][col] == val)
+			return (0);
+	}
+	return (1);
 }
 
 int ft_solver_from_pos(int pos, int **grid)
 {
-    int row;
-    int col;
-    int val;
+	int row;
+	int col;
+	int val;
 
-    if (pos == 16)
-        return (1);
-    row = pos / 4;
-    col = pos % 4;
-    if (grid[row][col] != 0)
-        return ft_solver_from_pos(pos + 1);
-    while (val <= 4)
-    {
-        if (is_valid_placement(grid, row, col, val))
-        {
-            grid[row][col] = val;
-            if (ft_solver_from_pos(pos + 1))
-                return (1);
-            grid[row][col] = 0;
-        }
-        val++;
-    }
-    return (0);
+	if (pos == 16)
+		err_manager();
+	row = pos / 4;
+	col = pos % 4;
+	if (grid[row][col] != 0)
+		return ft_solver_from_pos(pos + 1, **grid);
+	val = 1;
+	while (val <= 4)
+	{
+		if (is_valid_placement(grid, row, col, val))
+		{
+			grid[row][col] = val;
+			if (ft_solver_from_pos(pos + 1, **grid))
+				err_manager();
+			grid[row][col] = 0;
+		}
+		val++;
+	}
+	return (0);
 }
