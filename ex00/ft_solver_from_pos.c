@@ -12,7 +12,26 @@
 
 #include "sources.h"
 
-int    ft_solver_from_pos(int pos, int **grid)
+int is_valid_place(int grid[4][4], int row, int col, int val)
+{
+    int i;
+    int j;
+
+    j = 0;
+    while (j < 4)
+    {
+        if (grid[row][j] == val)
+            return (0);
+    }
+    i = 0;
+    while (i < 4)
+    {
+        if (grid[i][col] == val)
+            return (0);
+    }
+}
+
+int ft_solver_from_pos(int pos, int **grid)
 {
     int row;
     int col;
