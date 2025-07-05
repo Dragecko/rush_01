@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   sources.h                                           :+:    :+:           */
+/*   ft_putchar.c                                        :+:    :+:           */
 /*                                                      +:+                   */
 /*   By: elhirond <marvin@42.fr>                       +#+                    */
 /*                                                    +#+                     */
-/*   Created: 2025/07/05 15:37:18 by elhirond       #+#    #+#                */
-/*   Updated: 2025/07/05 15:46:24 by elhirond       ########   odam.nl        */
+/*   Created: 2025/06/24 10:58:15 by elhirond       #+#    #+#                */
+/*   Updated: 2025/06/24 11:16:29 by elhirond       ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOURCES_H
-# define SOURCES_H
+#include <unistd.h>
 
-# include <unistd.h>
-# include <stdio.h>
-
-void	ft_putstr(char *str);
-void    ft_putchar(char c);
-
-# define ERR "Error\n"
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
