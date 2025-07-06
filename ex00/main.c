@@ -55,7 +55,10 @@ int	main(int argc, char **argv)
 		return (err_manager());
 	clues = parsing(argv[1]);
 	grid = init_grid();
-	ft_solver_from_pos(pos, grid, clues);
+	if (ft_solver_from_pos(pos, grid, clues) == 0)
+		ft_putstr("succes\n");
+	else 
+		ft_putstr("echec\n");
 	disp_grid(grid);
 	free(grid);
 	return (0);
