@@ -22,10 +22,10 @@ void	ft_putchar(char c);
 int		err_manager(void);
 void	disp_grid(int **grid);
 int		**init_grid(void);
-int		count_visible_from_left(int row, int **grid);
-int		count_visible_from_right(int row, int **grid);
-int		count_visible_from_top(int col, int **grid);
-int		count_visible_from_bottom(int col, int **grid);
+int		count_visible_from_left(int row, int col, int **grid);
+int		count_visible_from_right(int row, int col, int **grid);
+int		count_visible_from_top(int row, int col, int **grid);
+int		count_visible_from_bottom(int row, int col, int **grid);
 int		*parsing(char *input);
 int		ft_solver_from_pos(int pos, int **grid, int *clues);
 

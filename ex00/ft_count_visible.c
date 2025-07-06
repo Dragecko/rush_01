@@ -12,7 +12,7 @@
 
 #include "sources.h"
 
-int	count_visible_from_left(int row, int **grid)
+int	count_visible_from_left(int row, int col, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -21,19 +21,22 @@ int	count_visible_from_left(int row, int **grid)
 	visible = 0;
 	max_h = 0;
 	i = 0;
-	while (i < 4)
+	if (col == 3)
 	{
-		if (grid[row][i] > max_h)
+		while (i < 4)
 		{
-			visible++;
-			max_h = grid[row][i];
+			if (grid[row][i] > max_h)
+			{
+				visible++;
+				max_h = grid[row][i];
+			}
+			i++;
 		}
-		i++;
 	}
 	return (visible);
 }
 
-int	count_visible_from_right(int row, int **grid)
+int	count_visible_from_right(int row, int col, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -42,19 +45,22 @@ int	count_visible_from_right(int row, int **grid)
 	visible = 0;
 	max_h = 0;
 	i = 3;
-	while (i >= 0)
+	if (col == 3)
 	{
-		if (grid[row][i] > max_h)
+		while (i >= 0)
 		{
-			visible++;
-			max_h = grid[row][i];
+			if (grid[row][i] > max_h)
+			{
+				visible++;
+				max_h = grid[row][i];
+			}
+			i--;
 		}
-		i--;
 	}
 	return (visible);
 }
 
-int	count_visible_from_top(int col, int **grid)
+int	count_visible_from_top(int row, int col, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -63,19 +69,22 @@ int	count_visible_from_top(int col, int **grid)
 	visible = 0;
 	max_h = 0;
 	i = 0;
-	while (i < 4)
+	if (row == 3)
 	{
-		if (grid[i][col] > max_h)
+		while (i < 4)
 		{
-			visible++;
-			max_h = grid[i][col];
+			if (grid[i][col] > max_h)
+			{
+				visible++;
+				max_h = grid[i][col];
+			}
+			i++;
 		}
-		i++;
 	}
 	return (visible);
 }
 
-int	count_visible_from_bottom(int col, int **grid)
+int	count_visible_from_bottom(int row, int col, int **grid)
 {
 	int	visible;
 	int	max_h;
@@ -84,14 +93,17 @@ int	count_visible_from_bottom(int col, int **grid)
 	visible = 0;
 	max_h = 0;
 	i = 3;
-	while (i >= 0)
+	if (row == 3)
 	{
-		if (grid[i][col] > max_h)
+		while (i >= 0)
 		{
-			visible++;
-			max_h = grid[i][col];
+			if (grid[i][col] > max_h)
+			{
+				visible++;
+				max_h = grid[i][col];
+			}
+			i--;
 		}
-		i--;
 	}
 	return (visible);
 }

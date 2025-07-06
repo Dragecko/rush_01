@@ -61,5 +61,6 @@ int	main(int argc, char **argv)
 		ft_putstr("echec\n");
 	disp_grid(grid);
 	free(grid);
+	free(clues);
 	return (0);
 }
