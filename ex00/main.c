@@ -6,7 +6,7 @@
 /*   By: mlopizzo <mlopizzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:26:41 by elhirond          #+#    #+#             */
-/*   Updated: 2025/07/05 19:51:09 by mlopizzo         ###   ########.fr       */
+/*   Updated: 2025/07/06 16:30:00 by mlopizzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	if (ft_solver_from_pos(pos, grid, clues) == 0)
 		disp_grid(grid);
 	else
-		ft_putstr("Did not find any solutions\n");
+		err_manager;
 	free(grid);
 	free(clues);
 	return (0);
