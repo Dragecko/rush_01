@@ -56,11 +56,14 @@ int	main(int argc, char **argv)
 	clues = parsing(argv[1]);
 	grid = init_grid();
 	if (ft_solver_from_pos(pos, grid, clues) == 0)
-		ft_putstr("succes\n");
-	else 
-		ft_putstr("echec\n");
-	disp_grid(grid);
+		disp_grid(grid);
+	else
+		ft_putstr("Did not find any solutions\n");
 	free(grid);
 	free(clues);
 	return (0);
 }
+
+//clues = parsing("3 1 4 2 2 2 1 2 2 2 1 3 2 1 3 2");
+//clues = parsing("4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2");
+//clues = parsing("3 2 2 1 2 3 1 2 3 2 1 3 1 3 3 2");
